@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet" />
+<title>Create an Ad</title>
+</head>
+<body class="d-flex flex-column h-100">
+<div th:replace="~{fragments/header :: header}"></div><br>
+   <div class = "container mt-7">
+       <h1 class="md">Create an Ad</h1>
+       <div class = "row">
+           <div class = "col-md-0 col-md-offset-3"></div>     
+                   <br><br>
+                   <div>
+                   <form th:action="@{/adForm}" method="post" th:object="${ad}">
+                           <label for="petName"> Pet Name </label>
+                           <input id="petName" class="form-control" th:field="*{petName}" type="text" />
+                           <label for="petGender">Gender </label>
+                           <input id="petGender" class="form-control" th:field="*{petGender}" type="text" />
+                           <label for="desc"> Description </label>
+                           <input id="desc" class="form-control" type="text" th:field="*{petDescription}" />
+                           <label for="desc"> Description </label>
+                           <!--<input id="desc" class="form-control" type="file" th:field="*{image}" />-->
+                           <br>
+                    <button type="submit" class="btn btn-success">Submit</button>                          
+                </form>                
+            </div>
+        </div>
+     </div> 
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

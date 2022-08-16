@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet" />
+<title>Registration</title>
+</head>
+<body class="d-flex flex-column h-100">
+<div th:replace="~{fragments/header :: header}"></div><br>
+   <div class = "container mt-7">
+       <h1 class="md">Registration</h1>
+       <div class = "row">
+           <div class = "col-md-0 col-md-offset-3">
+               <div th:if="${param.success}">
+                   <div class="alert-info">You are successfully registered</div>
+               </div>
+           </div>
+                   
+                   <br><br>
+                   <div>
+                   <form th:action="@{/registration}" method="post" th:object="${user}">
+                           <label for="fName"> First Name </label>
+                           <input id="fName" class="form-control" th:field="*{fName}"
+                                  required autofocus="autofocus" />
+                           <label for="lName"> Last Name </label>
+                           <input id="lName" class="form-control" th:field="*{lName}"
+                               required autofocus="autofocus" />
+                           <label for="email"> Email </label>
+                           <input id="email" class="form-control" th:field="*{email}" required
+                               autofocus="autofocus" />
+                           <label for="password"> Password </label>
+                           <input id="password" class="form-control" type="password"
+                               th:field="*{password}" required autofocus="autofocus" /><br>
+                           <button type="submit" class="btn btn-success">Register</button>
+                           <span>Already registered? <a th:href="@{/login}">Login here</a></span>
+                   </form>                
+                </div>
+            </div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

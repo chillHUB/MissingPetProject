@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Miss My Pet</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100">
+
+    <div th:replace="~{fragments/header :: header}"></div>
+    <br><br>
+        <div class="container">
+            <div class="row" h-500>
+                <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-3 " th:each="ad : ${ad}">
+                    <tr>
+                        <td> 
+                            <ul class="list-unstyled  mb-10" >                               
+<!--                                    <div class="row justify-content-center">-->
+<!--                                        <div class="col-md-12 col-lg-12 mb-12 mb-lg-12  ">-->
+                                            <div class="card border-5 shadow " >
+                                                <img th:src="${ad.imageLink}" alt="Card image cap" >
+                                                <div class="card-body p-1-9 p-xl-12 mb-9 ">
+                                                        <div class="mb-4">
+                                                        <h3 class="h3 mb-0" th:text="${ad.petName}">...</h3><br>
+                                                        <h3>Missing</h3>
+                                                        </div>
+                                                        <!--<div class="h4">Name:</div>-->
+                                                        <!--<li class="h5" th:text="${ad.petName}" h-250></li>-->
+                                                        <label>Gender:</label>
+                                                         <li th:text="${ad.petGender}"></li>
+                                                        <label>Description:</label>
+                                                        <li th:text="${ad.petDescription}"> </li>
+                                                </div>
+                                             </div>
+                                           </ul>
+                                        </div>
+                                    </div>                               
+                                </div>                 
+<div  th:replace="~{fragments/footer :: footer}"> </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

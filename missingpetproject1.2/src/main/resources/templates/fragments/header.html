@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Miss My Pet</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" th:fragment="header">
+
+    <a class="navbar-brand" th:href="@{/}">Missing Pets</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" th:class="${activePage == 'found'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/found}">Found Pets<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'login'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/login}">Log In</a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'registration'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/registration}">Registration</a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'adForm'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/adForm}">Create an Ad</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+</body>
+</html>
