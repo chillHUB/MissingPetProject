@@ -1,0 +1,2 @@
+# MissingPetProject
+An application for posting a lost pet announcement, as well as finding an animal. The user will be able to create announcements about the loss and discovery of animals, the user will have the opportunity to register, after which the user will have a personal account, in which there will be his personal information, as well as the ability to create, correct, save, delete personal information and announcements. Add a photo of a pet.
